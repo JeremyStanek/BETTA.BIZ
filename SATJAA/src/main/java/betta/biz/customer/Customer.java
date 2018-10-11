@@ -11,18 +11,21 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 	private String address;
-	
-	
+	private String phone;
+	private String dOB;
+		
 	public Customer () {
 		
 	}
 	
-	public Customer(String id, String firstName, String lastName, String address) {
+	public Customer(String id, String firstName, String lastName, String address, String phone, String dOB) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
+		this.phone = phone;
+		this.dOB = dOB;
 	}
 	public String getId() {
 		return id;
@@ -47,6 +50,18 @@ public class Customer {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getdOB() {
+		return dOB;
+	}
+	public void setdOB(String dOB) {
+		this.dOB = dOB;
 	}
 	
 }

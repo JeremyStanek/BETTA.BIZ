@@ -32,13 +32,13 @@ public class JobController {
 	
 	@RequestMapping(method=RequestMethod.POST, value="/customers/{customerId}/jobs")
 	public void addJob(@RequestBody Job job, @PathVariable String customerId) {
-		job.setCustomer(new Customer(customerId, "", "", ""));
+		job.setCustomer(new Customer(customerId, "", "", "", "", ""));
 		jobService.addJob(job);
 	}
 
 	@RequestMapping(method=RequestMethod.PUT, value="/customers/{customerId}/jobs/{id}")
 	public void updateCustomer(@RequestBody Job job, @PathVariable String id, @PathVariable String customerId) {
-		job.setCustomer(new Customer(customerId, "", "", ""));
+		job.setCustomer(new Customer(customerId, "", "", "", "", ""));
 		jobService.updateJob(job);
 	}
 	
