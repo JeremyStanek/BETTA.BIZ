@@ -45,7 +45,7 @@ public class Job {
 	public String getDateStarted() {
 		return dateStarted;
 	}
-	public void setDateStarted(String date) {
+	public void setDateStarted(String dateStarted) {
 		this.dateStarted = dateStarted;
 	}
 	public String getDateFinished() {

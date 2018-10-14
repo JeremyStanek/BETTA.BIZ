@@ -21,7 +21,7 @@ public class JobController {
 	private JobService jobService;
 	
 	@RequestMapping("/customers/{id}/jobs")
-	public List<Job> getAllCustomers(@PathVariable String id){
+	public List<Job> getAllJobs(@PathVariable String id){
 		return jobService.getAllJobs(id);
 	}
 	
@@ -30,20 +30,20 @@ public class JobController {
 		return jobService.getJob(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/customers/{customerId}/jobs")
+	@RequestMapping(method=RequestMethod.POST, value="/customers/{customerId}/jobs/{id}")
 	public void addJob(@RequestBody Job job, @PathVariable String customerId) {
 		job.setCustomer(new Customer(customerId, "", "", "", "", ""));
 		jobService.addJob(job);
 	}
 
-	@RequestMapping(method=RequestMethod.PUT, value="/customers/{customerId}/jobs/{id}")
-	public void updateCustomer(@RequestBody Job job, @PathVariable String id, @PathVariable String customerId) {
+	@RequestMapping(method=RequestMethod.PUT, value="/customers/{customerId}/jobs/{jobId}")
+	public void updateJob(@RequestBody Job job, @PathVariable String customerId, @PathVariable String jobId) {
 		job.setCustomer(new Customer(customerId, "", "", "", "", ""));
 		jobService.updateJob(job);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/customers/{customerId}/jobs/{id}")
-	public void deleteCustomer(@PathVariable String id) {
+	@RequestMapping(method=RequestMethod.DELETE, value="/Jobs/{JobId}/jobs/{id}")
+	public void deleteJob(@PathVariable String id) {
 		jobService.deleteJob(id);
 	}
 }
